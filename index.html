@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTC · Mysterious</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="background"><div class="hidden-love">I LOVE U SANIA</div><div class="butterfly-layer" aria-hidden="true"><span class="butterfly butterfly-1"></span><span class="butterfly butterfly-2"></span><span class="butterfly butterfly-3"></span><span class="butterfly butterfly-4"></span></div></div>
+
+<main class="app">
+
+    <header class="header">
+        <div>
+            <div class="brand">UTC</div>
+            <div class="subtitle">Mysterious</div>
+        </div>
+
+        <div class="utc-status" id="utcStatus">
+            Checking trusted UTC...
+        </div>
+    </header>
+
+    <section class="welcome" id="welcome">
+        <h1>UTC PACKAGE</h1>
+        <p>
+            
+            One package.<br>Seven moments.<br>
+            Each memory opens only at its own UTC time.
+        </p>
+
+        <label class="file-button">
+            Open .UTC Package
+            <input
+                type="file"
+                id="packageInput"
+                accept=".utc,application/json"
+                hidden
+            >
+        </label>
+    </section>
+
+    <section class="package-panel hidden" id="packagePanel">
+
+        <div class="package-heading">
+            <div>
+                <div class="eyebrow">PACKAGE</div>
+                <h2 id="packageId">—</h2>
+            </div>
+
+            <button id="reloadPackage" class="secondary-button">
+                Refresh UTC
+            </button>
+        </div>
+
+        <div class="trusted-time">
+            <span>Trusted UTC</span>
+            <strong id="trustedUtc">—</strong>
+        </div>
+
+        <div id="fileList" class="file-list"></div>
+
+    </section>
+
+    <section class="message hidden" id="message"></section>
+
+</main>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
