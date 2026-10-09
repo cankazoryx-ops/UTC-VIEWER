@@ -1,4 +1,4 @@
-const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL = "https://utc-backend-2i6y.onrender.com";
 
 const packageInput = document.getElementById("packageInput");
 const welcome = document.getElementById("welcome");
@@ -126,6 +126,8 @@ async function loadPackageStatus() {
         }
 
         currentPackageFile = data;
+
+        currentPackage.files = data.files;
 
         trustedUtcElement.textContent =
             new Date(data.trustedUTC).toISOString();
@@ -2375,3 +2377,18 @@ checkBackend();
 
 
 
+
+
+/* UTC_URL_PACKAGE_AUTOLOAD */
+(async () => {
+    const packageId = new URLSearchParams(window.location.search).get(id);
+    if (!packageId) return;
+    currentPackage = { packageId, files: [] };
+    completedFiles = new Set();
+    packageIdElement.textContent = packageId;
+    welcome.classList.add(hidden);
+    packagePanel.classList.remove(hidden);
+    await loadPackageStatus();
+    if (refreshTimer) clearInterval(refreshTimer);
+    refreshTimer = setInterval(loadPackageStatus, 1000);
+})();
